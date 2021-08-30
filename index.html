@@ -74,7 +74,31 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  // 1.
+  $(document).ready(console.log("Let's get ready to party with jQuery!"));
+  // 2.
+  $("article > img").attr("class","image-center")
+  // 3.
+  $("article > p").eq(-1).remove()
+  // 4.
+  let randomPx = Math.random()*100;
+  $("#title").css("fontSize", randomPx);
+  // 5.
+  let newLi= $("<li>").text("This is a new list item");
+  $("ol").append(newLi)
+  // 6.
+  let newP= $("<p>").text("I'm sorry, that list was useless so we've replaced it with this paragraph");
+  $("aside").html(newP.get());
+  // 7. 
+  let formR= $("input").eq(0).val();
+  let formB= $("input").eq(1).val();
+  let formG= $("input").eq(2).val();
+  $("body").css("background", `rgb(${formR},${formG},${formB})`);
+  // 8.
+  $("article").on("click","img", function(evt){
+    evt.target.remove();
+  });
+
 </script>
 </body>
 
